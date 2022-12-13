@@ -1,4 +1,7 @@
-﻿using System;
+﻿using booklibrary.Abstractions;
+using booklibrary.DataAccess;
+using booklibrary.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +25,9 @@ namespace booklibrary.Views
         public LibrarianWindow()
         {
             InitializeComponent();
+            var bookRepo = new BookRepository();
+            var mw = new LibrarianViewModel(bookRepo);
+            this.DataContext = mw;
         }
     }
 }

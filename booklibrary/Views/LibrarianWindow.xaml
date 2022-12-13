@@ -5,11 +5,55 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:booklibrary.Views"
         mc:Ignorable="d"
-        Title="LibrarianWindow" Height="450" Width="800">
-    <Grid>
+        Title="LibrarianWindow" Height="450" Width="1000">
+    <Grid Background="#FF463E3E">
 
-        <Button Height="50" Content="Show ALl Books" Margin="98,79,569,305"/>
-        <Button Height="50" Content="Button" Margin="353,79,331,305"/>
+        <Button Command="{Binding ShowCommand}" Height="50" Content="Show ALl Books" Margin="10,10,867,374"/>
+        <Button Height="50" Content="Delete" Margin="10,239,867,145"/>
+        <Button Height="50" Content="Insert" Margin="10,163,867,221"/>
+        <Button Height="50" Content="Update" Margin="10,80,867,304"/>
+        <ListView Margin="379,42,10,10" ItemsSource="{Binding AllBooks}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Id" Width="50">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock FontSize="18" HorizontalAlignment="Center" Padding="5,2" Text="{Binding Id}"></TextBlock>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="BookName" Width="500">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock FontSize="18" HorizontalAlignment="Center" Padding="5,2" Text="{Binding Name}"></TextBlock>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="BookPages" Width="100">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock FontSize="18" HorizontalAlignment="Center" Padding="5,2" Text="{Binding Pages}"></TextBlock>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="BookQuantity" Width="80">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock FontSize="18" HorizontalAlignment="Center" Padding="5,2" Text="{Binding Quantity}"></TextBlock>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <TextBox HorizontalAlignment="Left" Margin="240,42,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" Height="26"/>
+        <TextBox HorizontalAlignment="Left" Margin="240,187,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" Height="26"/>
+        <TextBox HorizontalAlignment="Left" Margin="240,133,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" Height="26"/>
+        <TextBox HorizontalAlignment="Left" Margin="240,80,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" Height="26"/>
+        <Label Content="ID" HorizontalAlignment="Left" Margin="174,42,0,0" VerticalAlignment="Top" Width="44" Background="{x:Null}" Foreground="White"/>
+        <Label Content="Name" HorizontalAlignment="Left" Margin="174,80,0,0" VerticalAlignment="Top" Width="44" Background="{x:Null}" Foreground="White"/>
+        <Label Content="Pages" HorizontalAlignment="Left" Margin="174,133,0,0" VerticalAlignment="Top" Width="44" Background="{x:Null}" Foreground="White"/>
+        <Label Content="Quantity" HorizontalAlignment="Left" Margin="161,188,0,0" VerticalAlignment="Top" Width="57" Background="{x:Null}" Foreground="White"/>
 
     </Grid>
 </Window>

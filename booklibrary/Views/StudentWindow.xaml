@@ -7,6 +7,8 @@
         mc:Ignorable="d"
         Title="StudentWindow" Height="450" Width="800">
     <Grid>
-        <Button></Button>
+
+        <Button Content="Show All " Height="47" Margin="58,45,561,342" Foreground="#FF0079FF" FontSize="22"  />
+
     </Grid>
 </Window>

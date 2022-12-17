@@ -10,7 +10,7 @@
 
         <Button Command="{Binding ShowCommand}" Height="50" Content="Show ALl Books" Margin="10,10,867,374"/>
         <Button Height="50" Content="Delete" Margin="10,239,867,145"/>
-        <Button Height="50" Content="Insert" Margin="10,163,867,221"/>
+        <Button Command="{Binding InsertCommand}" Height="50" Content="Insert" Margin="10,163,867,221"/>
         <Button Height="50" Content="Update" Margin="10,80,867,304"/>
         <ListView Margin="379,42,10,10" ItemsSource="{Binding AllBooks}">
             <ListView.View>
@@ -46,10 +46,10 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <TextBox HorizontalAlignment="Left" Margin="240,42,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" Height="26"/>
-        <TextBox HorizontalAlignment="Left" Margin="240,187,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" Height="26"/>
-        <TextBox HorizontalAlignment="Left" Margin="240,133,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" Height="26"/>
-        <TextBox HorizontalAlignment="Left" Margin="240,80,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" Height="26"/>
+        <TextBox Name="Idtextbox" HorizontalAlignment="Left" Margin="240,42,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" Height="26"/>
+        <TextBox Name="Quantitytextbox" HorizontalAlignment="Left" Margin="240,187,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" Height="26"/>
+        <TextBox Name="Pagestextbox" HorizontalAlignment="Left" Margin="240,133,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" Height="26"/>
+        <TextBox Name="Nametextbox" HorizontalAlignment="Left" Margin="240,80,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" Height="26"/>
         <Label Content="ID" HorizontalAlignment="Left" Margin="174,42,0,0" VerticalAlignment="Top" Width="44" Background="{x:Null}" Foreground="White"/>
         <Label Content="Name" HorizontalAlignment="Left" Margin="174,80,0,0" VerticalAlignment="Top" Width="44" Background="{x:Null}" Foreground="White"/>
         <Label Content="Pages" HorizontalAlignment="Left" Margin="174,133,0,0" VerticalAlignment="Top" Width="44" Background="{x:Null}" Foreground="White"/>

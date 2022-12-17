@@ -14,6 +14,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Xml.Linq;
 
 namespace booklibrary.Views
 {
@@ -27,6 +28,10 @@ namespace booklibrary.Views
             InitializeComponent();
             var bookRepo = new BookRepository();
             var mw = new LibrarianViewModel(bookRepo);
+            mw.TxtId = Idtextbox;
+            mw.TxtName = Nametextbox;
+            mw.TxtPages= Pagestextbox;
+            mw.TxtQuantity= Quantitytextbox;
             this.DataContext = mw;
         }
     }

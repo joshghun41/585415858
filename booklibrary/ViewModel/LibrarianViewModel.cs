@@ -7,6 +7,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 
 namespace booklibrary.ViewModel
 {
@@ -18,6 +19,11 @@ namespace booklibrary.ViewModel
         public RelayCommand DeleteCommand { get; set; }
         public RelayCommand InsertCommand { get; set; }
         private ObservableCollection<Book> allBooks;
+
+        public TextBox TxtId { get; set; }
+        public TextBox TxtName { get; set; }
+        public TextBox TxtPages { get; set; }
+        public TextBox TxtQuantity { get; set; }
 
         public ObservableCollection<Book> AllBooks
         {
@@ -46,7 +52,18 @@ namespace booklibrary.ViewModel
 
             InsertCommand = new RelayCommand(l =>
             {
-
+                int id = int.Parse(TxtId.Text);
+                int pages = int.Parse(TxtPages.Text);
+                int quantity = int.Parse(TxtQuantity.Text);
+                AllBooks = _bookRepo.GetAllData();
+                Book book = new Book
+                {
+                    Id = id,
+                    Name = TxtName.Text,
+                    Pages = pages,
+                    Quantity = quantity
+                };
+                _bookRepo.InsertData(book);
             });
         }
     }

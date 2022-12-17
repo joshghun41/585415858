@@ -9,6 +9,13 @@
     <Grid>
 
         <Button Content="Show All " Height="47" Margin="58,45,561,342" Foreground="#FF0079FF" FontSize="22"  />
+        <ListView  Margin="320,45,10,87">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn/>
+                </GridView>
+            </ListView.View>
+        </ListView>
 
     </Grid>
 </Window>
